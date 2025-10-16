@@ -44,34 +44,6 @@ document.querySelectorAll('.toc a').forEach(anchor => {
     });
 });
 
-// Search Functionality
-// document.getElementById('searchInput').addEventListener('keyup', function() {
-//     const searchText = this.value.toLowerCase();
-//     const sections = document.querySelectorAll('.section');
-    
-//     sections.forEach(section => {
-//         const sectionText = section.textContent.toLowerCase();
-        
-//         if (sectionText.includes(searchText)) {
-//             section.style.display = 'block';
-//             // Highlight matching text (simplified)
-//             section.innerHTML = section.innerHTML.replace(
-//                 new RegExp(searchText, 'gi'),
-//                 match => `<span style="background-color: yellow; color: black;">${match}</span>`
-//             );
-//         } else if (searchText.length > 0) {
-//             section.style.display = 'none';
-//         } else {
-//             section.style.display = 'block';
-//             // Remove any existing highlights
-//             section.innerHTML = section.innerHTML.replace(
-//                 /<span style="background-color: yellow; color: black;">(.+?)<\/span>/gi,
-//                 '$1'
-//             );
-//         }
-//     });
-// });
-
 // Add animation on scroll
 function animateOnScroll() {
     const sections = document.querySelectorAll('.section');
