@@ -1,349 +1,558 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bab III — Kepribadian Muhammadiyah</title>
-    <meta name="description" content="Materi Pendidikan Kemuhammadiyahan — Bab III Kepribadian Muhammadiyah" />
+    <meta name="description" content="Materi Pendidikan Kemuhammadiyahan — Bab III Kepribadian Muhammadiyah">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-hidden {
+            display: none;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        .active-nav {
+            background-color: #059669;
+            color: white;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="container" role="document">
-        <header>
-            <div class="logo" aria-hidden="true">
-                <img src="assets/LOGO BARU SMK MUHI.png" alt="Logo Sekolah / Muhammadiyah"
-                    onerror="this.style.display='none'">
-            </div>
-            <div>
-                <h1>Bab III — Kepribadian Muhammadiyah — Kelompok 3 </h1>
-                <p>Pendidikan Kemuhammadiyahan — Materi terstruktur untuk siswa Kelas XI</p>
-            </div>
-        </header>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                        M
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-green-700">Kepribadian Muhammadiyah</h1>
+                        <p class="text-xs text-gray-500">Bab III - Kelompok 3</p>
+                    </div>
+                </div>
 
-        <aside aria-label="Daftar Isi">
-            <nav>
-                <h2><i class="fas fa-list"></i> Daftar Isi</h2>
-                <ul class="toc" id="toc">
-                    <li><a href="#pengertian" data-id="pengertian"><i class="fas fa-book"></i> Pengertian</a></li>
-                    <li><a href="#matan" data-id="matan"><i class="fas fa-file-alt"></i> Matan Kepribadian</a></li>
-                    <li><a href="#sejarah" data-id="sejarah"><i class="fas fa-history"></i> Sejarah Perumusan</a></li>
-                    <li><a href="#fungsi" data-id="sejarah"><i class="fas fa-leaf"></i> Fungsi</a></li>
-                    <li><a href="#hakikat" data-id="hakikat"><i class="fas fa-lightbulb"></i> Hakikat</a></li>
-                </ul>
-
-                <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
-                    <button class="btn" id="printBtn"><i class="fas fa-print"></i> Cetak / Download</button>
-                    <a class="btn ghost" id="darkModeToggle" href="#"
-                        onclick="event.preventDefault();toggleDarkMode();">
-                        <i class="fas fa-moon"></i> Mode Gelap
+                <div class="hidden md:flex space-x-1">
+                    <a href="#" data-section="pengertian"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300 active-nav">
+                        <i class="fas fa-book mr-2"></i>Pengertian
+                    </a>
+                    <a href="#" data-section="matan" class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-file-alt mr-2"></i>Matan
+                    </a>
+                    <a href="#" data-section="sejarah"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-history mr-2"></i>Sejarah
+                    </a>
+                    <a href="#" data-section="fungsi" class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-leaf mr-2"></i>Fungsi
+                    </a>
+                    <a href="#" data-section="hakikat"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-lightbulb mr-2"></i>Hakikat
                     </a>
                 </div>
-            </nav>
-        </aside>
 
-        <main>
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
+                <button id="mobileMenuButton" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
 
-            <div class="lead">
+            <div id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2">
+                    <a href="#" data-section="ki-bagus"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-user mr-2"></i>Ki Bagus
+                    </a>
+                    <a href="#" data-section="pengertian"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300 active-nav">
+                        <i class="fas fa-book mr-2"></i>Pengertian
+                    </a>
+                    <a href="#" data-section="matan" class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-file-alt mr-2"></i>Matan
+                    </a>
+                    <a href="#" data-section="sejarah"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-history mr-2"></i>Sejarah
+                    </a>
+                    <a href="#" data-section="fungsi" class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-leaf mr-2"></i>Fungsi
+                    </a>
+                    <a href="#" data-section="hakikat"
+                        class="nav-link px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-lightbulb mr-2"></i>Hakikat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Bab III — Kepribadian Muhammadiyah</h1>
+            <p class="text-lg md:text-xl mb-6">Pendidikan Kemuhammadiyahan — Materi terstruktur untuk siswa Kelas XI</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold text-green-700 mb-2">Kepribadian Muhammadiyah</h2>
+                    <p class="text-gray-600">Pembahasan lengkap Bab III: pengertian, matan kepribadian, sejarah
+                        perumusan, fungsi, dan hakikat</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-500">Sumber: Pendidikan KEMUHAMMADIYAHAN Untuk SMA/MA MUHAMMADIYAH</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="ki-bagus" class="section-hidden bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6 text-center">
+                <h1 class="text-2xl font-bold">KI BAGUS HADIKUSUMO</h1>
+                <p class="text-lg">Ulama Yang Tegas</p>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-center mb-6">
+                    <div class="w-48 h-48 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                        <i class="fas fa-user text-6xl"></i>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-gray-700">Saat memimpin Muhammadiyah Ki Bagus Hadikusumo berani menentang perintah
+                        pimpinan tentara Dai Nippon yang terkenal ganas dan kejam.</p>
+                    <p class="text-gray-700">Kala itu semua sekolah termasuk sekolah Muhammadiyah setiap pagi
+                        diperintahkan melakukan "Sei Kerei" yaitu membungkukkan badan ke arah Timur laut, ke arah negeri
+                        Jepang dengan maksud memberi penghormatan kepada Dewa Matahari, Dewa yang dipercaya oleh
+                        masyarakat Jepang sebagai Dewa penitis para Kaisar Jepang.</p>
+                    <p class="text-gray-700">Ki Bagus Hadikusumo berani berdebat dengan pihak penguasa Jepang dengan
+                        resiko tinggi demi menyelamatkan generasi Islam dari perbuatan kemusyrikan. Akhirnya pihak
+                        Pemerintah Jepang memberi dispensasi khusus bagi semua sekolah Muhammadiyah untuk tidak
+                        melakukan upacara tersebut.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengertian" class="active-section bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-book mr-3"></i>1. Pengertian Kepribadian Muhammadiyah
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <p class="text-gray-700">
+                        <span class="font-bold text-green-700">Kepribadian Muhammadiyah</span> adalah rumusan yang
+                        menggambarkan hakikat Muhammadiyah, menjadi dasar dan pedoman amal usaha, perjuangan, serta
+                        mencerminkan sifat dan karakter warga Muhammadiyah. Setiap warga Muhammadiyah perlu memahaminya
+                        sebagai sumber nilai dan konsep dalam gerakan. Pengelolaan amal usaha harus berdasarkan nilai
+                        yang tercermin dalam kepribadian Muhammadiyah.
+                    </p>
+                    <p class="text-gray-700">
+                        Sebenarnya, kepribadian Muhammadiyah bukanlah hal baru, melainkan penegasan dari sifat dan
+                        kepribadian yang sudah ada sejak Muhammadiyah berdiri, sebagaimana diperjelas oleh KH. Faqih
+                        Usman.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div id="testimonial"
+            class="section-hidden bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex items-start">
+                <i class="fas fa-quote-left text-2xl mr-4 mt-1 opacity-70"></i>
                 <div>
-                    <h2>Kepribadian Muhammadiyah</h2>
-                    <p class="muted">Pembahasan lengkap Bab III: pengertian, matan kepribadian, sejarah perumusan, fungsi, dan hakikat</p>
-                </div>
-                <div style="text-align:right">
-                    <small class="muted">Sumber: Pendidikan KEMUHAMMADIYAHAN Untuk SMA/MA MUHAMMADIYAH</small>
-                </div>
-            </div>
-
-            <div class="cta-container">
-                <div class="cta" id="downloadBtn">
-                    <i class="fas fa-download"></i>
-                    <h4>Download Materi</h4>
-                    <p>Unduh versi PDF untuk belajar offline</p>
-                </div>
-                <div class="cta" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);"
-                    onclick="scrollToTop()">
-                    <i class="fas fa-arrow-up"></i>
-                    <h4>Kembali ke Atas</h4>
-                    <p>Scroll ke bagian atas halaman</p>
-                </div>
-            </div>
-
-            <section class="section div-hadiKusumo">
-                <h1 class="text-kusomo" style="text-align: center;">KI BAGUS HADIKUSUMO</h1>
-                <h4 class="text-kusomo" style="text-align: center; font-size: 20px;">Ulama Yang Tegas</h4>
-                <div class="border-img-hadi">
-                    <img src="assets/Screenshot 2025-09-25 120717.png" alt="">
-                </div>
-                <div style="margin-top: 30px; padding-inline: 30px;">
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Saat meminpin Muhammadiyah Ki Bagus Hadikusumo berani menentang perintah
-                        pimpinan tentara Dai
-                        Nippon yang terkenal ganas dan kejam.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Kala itu semua sekolah termasuk sekolah Muhammadiyah setiap pagi
-                        diperintahkan melakukan "Sei
-                        Kerei" yaitu membungkukkan badan ke arah Timur laut, ke arah negeri Jepang dengan maksud memberi
-                        penghormatan kepada Dewa Matahari, Dewa yang dipercaya oleh masyarakat Jepang sebagai Dewa
-                        penitis para Kaisar Jepang.</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Ki Bagus Hadikusumo berani berdebat dengan pihak penguasa Jepang dengan
-                        resiko tinggi demi
-                        menyelematkan generasi Islam dari perbuatan kemusyrikan. Akhirnya pihak Pemerintah Jepang
-                        memberi dispensasi khusus bagi semua sekolah Muhammadiyah untuk tidak melakukan upacara
-                        tersebut.</p>
-                </div>
-            </section>
-
-            <section id="pengertian" class="section">
-                <h3>1. Pengertian Kepribadian Muhammadiyah</h3>
-                <p>
-                    <strong>Kepribadian Muhammadiyah</strong> adalah rumusan yang menggambarkan hakikat Muhammadiyah,
-                    menjadi
-                    dasar dan pedoman amal usaha, perjuangan, serta mencerminkan sifat dan karakter warga
-                    Muhammadiyah. Setiap warga Muhammadiyah perlu memahaminya sebagai sumber nilai dan konsep dalam
-                    gerakan. Pengelolaan amal usaha harus berdasarkan nilai yang tercermin dalam kepribadian
-                    Muhammadiyah.
-                </p>
-                <p>
-                    Sebenarnya, kepribadian Muhammadiyah bukanlah hal baru, melainkan penegasan dari sifat dan
-                    kepribadian yang sudah ada sejak Muhammadiyah berdiri, sebagaimana diperjelas oleh KH. Faqih Usman.
-                </p>
-            </section>
-
-            <div class="testimonial">
-                <p>"Pemahaman tentang Kepribadian Muhammadiyah sangat penting bagi setiap kader untuk menjaga
-                    konsistensi gerakan dan identitas organisasi di tengah perubahan zaman."</p>
-                <div class="author">
-                    <img src="https://via.placeholder.com/50" alt="Foto pengajar" onerror="this.style.display='none'">
-                    <div class="author-info">
-                        <strong>Dr. Ahmad Syafii, M.A.</strong>
-                        <span>Dosen Pendidikan Agama Islam</span>
+                    <p class="text-lg italic mb-4">"Pemahaman tentang Kepribadian Muhammadiyah sangat penting bagi
+                        setiap kader untuk menjaga konsistensi gerakan dan identitas organisasi di tengah perubahan
+                        zaman."</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-12 h-12 bg-green-300 rounded-full flex items-center justify-center text-green-700 font-bold mr-3">
+                            AS
+                        </div>
+                        <div>
+                            <p class="font-bold">Dr. Ahmad Syafii, M.A.</p>
+                            <p class="text-green-100">Dosen Pendidikan Agama Islam</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <section id="matan" class="section">
-                <h3>2. Matan Kepribadian Muhammadiyah</h3>
-                <p>
-                    <strong>1. Apakah Muhammadiyah itu?</strong><br> Muhammadiyah adalah suatu
-                    persyarikatan yang
-                    merupakan
-                    “Gerakan Islam”. Maksud gerakannya adalah “Dakwah Islam dan Amar Ma’ruf Nahi munkar” yang ditujukan
-                    kepada dua bidang yakni perseorangan dan masyarakat.
-                </p>
-                <p>
-                    Dakwah amar ma'ruf nahi munkar pada bidang perseorangan dibagi 2 golongan, yaitu:
-                </p>
-                <ul>
+        <section id="matan" class="section-hidden bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-file-alt mr-3"></i>2. Matan Kepribadian Muhammadiyah
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">1. Apakah Muhammadiyah itu?</h3>
+                        <p class="text-gray-700 mb-4">Muhammadiyah adalah suatu persyarikatan yang merupakan "Gerakan
+                            Islam". Maksud gerakannya adalah "Dakwah Islam dan Amar Ma'ruf Nahi munkar" yang ditujukan
+                            kepada dua bidang yakni perseorangan dan masyarakat.</p>
 
-                    <li style="display: flex;"><strong>A. </strong>
-                        <p style="padding-left: 10px;">Kepada yang sudah Islam bersifat pembaharuan (tajdid) yaitu
-                            mengembalikan
-                            ajaran Islam yang asli
-                            dan murni, dan</p>
-                    </li>
+                        <p class="text-gray-700 mb-3">Dakwah amar ma'ruf nahi munkar pada bidang perseorangan dibagi 2
+                            golongan, yaitu:</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-4">
+                            <li class="text-gray-700">
+                                <span class="font-bold">A.</span> Kepada yang sudah Islam bersifat pembaharuan (tajdid)
+                                yaitu mengembalikan ajaran Islam yang asli dan murni, dan
+                            </li>
+                            <li class="text-gray-700">
+                                <span class="font-bold">B.</span> Kepada yang belum Islam, bersifat seruan, ajakan untuk
+                                memeluk Islam.
+                            </li>
+                        </ul>
 
-                    <li style="display: flex; margin-top: -20px;"><strong>B. </strong>
-                        <p style="padding-left: 10px;">Kepada yang belum Islam, bersifat seruan, ajakan untuk memeluk
-                            Islam.</p>
-                    </li>
-                </ul>
-               
-                <p style="margin-top: -25px;">Adapun dakwah Islam dan amar ma'ruf nahi munkar pada bidang masyarakat
-                    adalah bersifat kebaikan,
-                    bimbingan dan peringatan. Kesemuanya dilaksanakan bersama dengan bermusyawarah atas dasar taqwa dan
-                    mengharap keridhaan Allah semata.</p>
-                <p>Dengan melaksanakan dakwah Islam dan amar ma'ruf nahi munkar dengan cara masing-masing yang sesuai.
-                    Muhammadiyah menggerakkan masyarakat menuju tujuannya yaitu "Terwujudnya masyarakat utama, adil dan
-                    makmur yang diridhoi Allah SWT".</p>
+                        <p class="text-gray-700">Adapun dakwah Islam dan amar ma'ruf nahi munkar pada bidang masyarakat
+                            adalah bersifat kebaikan, bimbingan dan peringatan. Kesemuanya dilaksanakan bersama dengan
+                            bermusyawarah atas dasar taqwa dan mengharap keridhaan Allah semata.</p>
+                        <p class="text-gray-700 mt-3">Dengan melaksanakan dakwah Islam dan amar ma'ruf nahi munkar
+                            dengan cara masing-masing yang sesuai. Muhammadiyah menggerakkan masyarakat menuju tujuannya
+                            yaitu "Terwujudnya masyarakat utama, adil dan makmur yang diridhoi Allah SWT".</p>
+                    </div>
 
-                <hr style="margin-bottom: 20px;">
+                    <hr class="border-gray-300 my-6">
 
-                <strong style="margin-top: 20px;">2. Dasar dan Amal Usaha Muhammadiyah</strong>
-                <p>Dalam perjuangan melaksanakan usaha menuju tujuan terwujudnya masyarakat Islam yang sebenar-benarnya,
-                    Muhammadiyah mendasarkan segala gerak dan amal usahanya atas prinsip-prinsip yang tersimpul dalam
-                    Mukadimah Anggaran Dasar Muhammadiyah yaitu:</p>
-                <ul>
-                    <li>Hidup manusia harus berdasar tauhid, ibadah dan taat kepada Allah</li>
-                    <li>Hidup manusia harus bermasyarakat</li>
-                    <li>Mematuhi ajaran agama Islam dengan keyakinan bahwa Islam adalah landasan kepribadian dan
-                        ketertiban bersama untuk kebahagiaan dunia dan akhirat</li>
-                    <li>Menegakkan dan menjunjung tinggi agama Islam dalam masyarakat sebagai ibadah kepada Allah dan
-                        ihsan kepada manusia</li>
-                    <li>Ittiba’ kepada langkah perjuangan Nabi Muhammad SAW</li>
-                    <li>Melancarkan amal usaha dengan ketertiban organisasi</li>
-                </ul>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">2. Dasar dan Amal Usaha Muhammadiyah</h3>
+                        <p class="text-gray-700 mb-4">Dalam perjuangan melaksanakan usaha menuju tujuan terwujudnya
+                            masyarakat Islam yang sebenar-benarnya, Muhammadiyah mendasarkan segala gerak dan amal
+                            usahanya atas prinsip-prinsip yang tersimpul dalam Mukadimah Anggaran Dasar Muhammadiyah
+                            yaitu:</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-4">
+                            <li class="text-gray-700">Hidup manusia harus berdasar tauhid, ibadah dan taat kepada Allah
+                            </li>
+                            <li class="text-gray-700">Hidup manusia harus bermasyarakat</li>
+                            <li class="text-gray-700">Mematuhi ajaran agama Islam dengan keyakinan bahwa Islam adalah
+                                landasan kepribadian dan ketertiban bersama untuk kebahagiaan dunia dan akhirat</li>
+                            <li class="text-gray-700">Menegakkan dan menjunjung tinggi agama Islam dalam masyarakat
+                                sebagai ibadah kepada Allah dan ihsan kepada manusia</li>
+                            <li class="text-gray-700">Ittiba' kepada langkah perjuangan Nabi Muhammad SAW</li>
+                            <li class="text-gray-700">Melancarkan amal usaha dengan ketertiban organisasi</li>
+                        </ul>
+                    </div>
 
-                <strong style="margin-top: 20px;">3. Pedoman Amal Usaha dan Perjuangan Muhammadiyah</strong>
-                <p>Menilik dasar prinsip tersebut di atas, maka apapun yang diusahakan dan
-                    bagaimanapun cara perjuangan
-                    Muhammadiyah untuk mencapai tujuannya harus: "Berpegang teguh pada ajaran Allah dan Rasulnya.
-                    Bergerak membangun di segenap bidang dan lapangan dengan menggunakan cara serta menempuh jalan yang
-                    diridhai Allah SWT".</p>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">3. Pedoman Amal Usaha dan Perjuangan
+                            Muhammadiyah</h3>
+                        <p class="text-gray-700">Menilik dasar prinsip tersebut di atas, maka apapun yang diusahakan dan
+                            bagaimanapun cara perjuangan Muhammadiyah untuk mencapai tujuannya harus: "Berpegang teguh
+                            pada ajaran Allah dan Rasulnya. Bergerak membangun di segenap bidang dan lapangan dengan
+                            menggunakan cara serta menempuh jalan yang diridhai Allah SWT".</p>
+                    </div>
 
-                <strong style="margin-top: 20px;">4. Sifat Muhammadiyah</strong>
-                <p>Muhammadiyah memiliki sifat-sifat yang merupakan nilai-nilai dasar untuk
-                    melakukan gerakan. Untuk itu
-                    setiap warga Muhammadiyah wajib memelihara sifat-sifatnya, terutama yang tersebut di bawah ini:</p>
-                <ul>
-                    <li>Beramal dan berjuang untuk perdamaian dan kesejahteraan.</li>
-                    <li>Memperbanyak kawan dan mengamalkan ukhuwah Islamiyah.</li>
-                    <li>Lapang dada, luas pandangan dengan memegang teguh ajaran Islam.</li>
-                    <li>Bersifat keagamaan dan kemasyarakatan.</li>
-                    <li>Mengindahkan segala hukum, undang-undang, peraturan serta dasar dan falsafah negara yang sah.
-                    </li>
-                    <li>Amar ma'ruf nahi munkar dalam segala lapangan serta menjadi contoh teladan yang baik.</li>
-                    <li>Aktif dalam perkembangan masyarakat dengan maksud islah dan pembangunan, sesuai dengan ajaran
-                        Islam.</li>
-                    <li>Kerjasama dengan golongan Islam manapun juga dalam usaha menyiarkan dan mengamalkan agama Islam
-                        serta membela kepentingannya.</li>
-                    <li>Membantu pemerintah serta bekerjasama dengan golongan Islam dalam memelihara dan membangun
-                        negara untuk mencapai masyarakat adil dan makmur yang diridhoi Allah SWT.</li>
-                    <li>Bersifat adil dan korektif ke dalam dan ke luar dengan bijaksana</li>
-                </ul>
-            </section>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">4. Sifat Muhammadiyah</h3>
+                        <p class="text-gray-700 mb-4">Muhammadiyah memiliki sifat-sifat yang merupakan nilai-nilai dasar
+                            untuk melakukan gerakan. Untuk itu setiap warga Muhammadiyah wajib memelihara
+                            sifat-sifatnya, terutama yang tersebut di bawah ini:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-700">Beramal dan berjuang untuk perdamaian dan kesejahteraan.</li>
+                            <li class="text-gray-700">Memperbanyak kawan dan mengamalkan ukhuwah Islamiyah.</li>
+                            <li class="text-gray-700">Lapang dada, luas pandangan dengan memegang teguh ajaran Islam.
+                            </li>
+                            <li class="text-gray-700">Bersifat keagamaan dan kemasyarakatan.</li>
+                            <li class="text-gray-700">Mengindahkan segala hukum, undang-undang, peraturan serta dasar
+                                dan falsafah negara yang sah.</li>
+                            <li class="text-gray-700">Amar ma'ruf nahi munkar dalam segala lapangan serta menjadi contoh
+                                teladan yang baik.</li>
+                            <li class="text-gray-700">Aktif dalam perkembangan masyarakat dengan maksud islah dan
+                                pembangunan, sesuai dengan ajaran Islam.</li>
+                            <li class="text-gray-700">Kerjasama dengan golongan Islam manapun juga dalam usaha
+                                menyiarkan dan mengamalkan agama Islam serta membela kepentingannya.</li>
+                            <li class="text-gray-700">Membantu pemerintah serta bekerjasama dengan golongan Islam dalam
+                                memelihara dan membangun negara untuk mencapai masyarakat adil dan makmur yang diridhoi
+                                Allah SWT.</li>
+                            <li class="text-gray-700">Bersifat adil dan korektif ke dalam dan ke luar dengan bijaksana
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="sejarah" class="section">
-                <h3>3. Sejarah Perumusan Kepribadian Muhammadiyah</h3>
-                <p>
-                    Konsep Kepribadian Muhammadiyah ini timbul pada waktu Muhammadiyah dipimpin
-                    oleh H. M. Yunus Anis
-                    pada periode 1959–1962. Kepribadian Muhammadiyah dirumuskan setelah adanya pidato dari KH Fakih
-                    Usman di depan peserta kursus Pimpinan Muhammadiyah seluruh Indonesia pada tahun 1961 dengan judul:
-                    “<b>APAKAH MUHAMMADIYAH ITU?</b>”
-                </p>
-                <p>
-                    Pidato tersebut menggugah para tokoh Muhammadiyah lainnya untuk menengok ke
-                    dalam tubuhnya sendiri.
-                    Ternyata rangsangan dari pidato tersebut mendapatkan tanggapan yang positif dari persyarikatan yang
-                    dibuktikan dengan dibentuknya tim perumus materi KEPRIBADIAN MUHAMMADIYAH yang anggotanya terdiri
-                    dari KH. Fakih Usman, KH. Farid Ma’ruf, KH. Wardan Diponingrat, DR. HAMKA, H. Djarnawi Hadikusumo,
-                    M. Djindar Tamimy dan M. Saleh Ibrahim.
-                </p>
-                <p>
-                    Hasil rumusan Kepribadian Muhammadiyah tersebut selanjutnya disahkan oleh
-                    Sidang Tanwir yang
-                    diadakan pada tanggal 25-28 Agustus 1962. Setelah melewati pengolahan kembali, akhirnya dibawa ke
-                    dalam Muktamar ke-35 di Jakarta (Muktamar Setengah Abad). Dan pada Muktamar ke-35 itulah konsep
-                    "Kepribadian Muhammadiyah" disahkan setelah disempurnakan kembali oleh PP
-                    Muhammadiyah.<br>&nbsp;&nbsp;&nbsp;&nbsp;
-                    Adapun hal ihwal yang mendorong segera dirumuskan Kepribadian Muhammadiyah, antara lain:
-                </p>
+        <section id="sejarah" class="section-hidden bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-history mr-3"></i>3. Sejarah Perumusan Kepribadian Muhammadiyah
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-6">
+                    <p class="text-gray-700">
+                        Konsep Kepribadian Muhammadiyah ini timbul pada waktu Muhammadiyah dipimpin oleh H. M. Yunus
+                        Anis pada periode 1959–1962. Kepribadian Muhammadiyah dirumuskan setelah adanya pidato dari KH
+                        Fakih Usman di depan peserta kursus Pimpinan Muhammadiyah seluruh Indonesia pada tahun 1961
+                        dengan judul: "<span class="font-bold">APAKAH MUHAMMADIYAH ITU?</span>"
+                    </p>
+                    <p class="text-gray-700">
+                        Pidato tersebut menggugah para tokoh Muhammadiyah lainnya untuk menengok ke dalam tubuhnya
+                        sendiri. Ternyata rangsangan dari pidato tersebut mendapatkan tanggapan yang positif dari
+                        persyarikatan yang dibuktikan dengan dibentuknya tim perumus materi KEPRIBADIAN MUHAMMADIYAH
+                        yang anggotanya terdiri dari KH. Fakih Usman, KH. Farid Ma'ruf, KH. Wardan Diponingrat, DR.
+                        HAMKA, H. Djarnawi Hadikusumo, M. Djindar Tamimy dan M. Saleh Ibrahim.
+                    </p>
+                    <p class="text-gray-700">
+                        Hasil rumusan Kepribadian Muhammadiyah tersebut selanjutnya disahkan oleh Sidang Tanwir yang
+                        diadakan pada tanggal 25-28 Agustus 1962. Setelah melewati pengolahan kembali, akhirnya dibawa
+                        ke dalam Muktamar ke-35 di Jakarta (Muktamar Setengah Abad). Dan pada Muktamar ke-35 itulah
+                        konsep "Kepribadian Muhammadiyah" disahkan setelah disempurnakan kembali oleh PP Muhammadiyah.
+                    </p>
+                    <p class="text-gray-700">
+                        Adapun hal ihwal yang mendorong segera dirumuskan Kepribadian Muhammadiyah, antara lain:
+                    </p>
 
-                <strong style="margin-top: 20px;">1. Situasi politik negara dan masyarakat di sekitar 1962</strong>
-                <p style="margin-top: 10px;">Setelah presiden Soekarno mengeluarkan Dekrit
-                    Presiden 5 Juli 1959 negara Indonesia memasuki zaman
-                    baru yang dikenal dengan zaman Demokrasi Terpimpin atau disebut sebagai zaman NASAKOM (Nasionalis,
-                    Agama dan Komunis). Isi pokok dari Dekrit tersebut adalah "Kembali kepada UUD 1945", ternyata dalam
-                    prakteknya tindakan pemerintahan ini tidak mencerminkan jiwa Pancasila serta tidak bertindak
-                    konsisten dalam melaksanakan UUD 1945.</p>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">1. Situasi politik negara dan masyarakat di
+                            sekitar 1962</h3>
+                        <p class="text-gray-700 mb-4">Setelah presiden Soekarno mengeluarkan Dekrit Presiden 5 Juli 1959
+                            negara Indonesia memasuki zaman baru yang dikenal dengan zaman Demokrasi Terpimpin atau
+                            disebut sebagai zaman NASAKOM (Nasionalis, Agama dan Komunis). Isi pokok dari Dekrit
+                            tersebut adalah "Kembali kepada UUD 1945", ternyata dalam prakteknya tindakan pemerintahan
+                            ini tidak mencerminkan jiwa Pancasila serta tidak bertindak konsisten dalam melaksanakan UUD
+                            1945.</p>
 
-                <p>Penyelewengan terhadap konstitusi semakin bertambah hebat dan muncul di
-                    tengah-tengah masyarakat
-                    bangsa Indonesia. Pancasila diperas menjadi gotong royong, terjadi pemusatan kekuatan di tangan
-                    presiden dan lain sebagainya. Semua kekuatan sosial politik bangsa Indonesia yang telah membuktikan
-                    diri loyal dan setia dalam perjuangan menegakkan negara Republik Indonesia, karena tidak menyetujui
-                    politik yang dijalankan pemerintah maka dibubarkan atau dipaksa membubarkan diri, seperti yang
-                    dialami PSI dan Masyumi.</p>
+                        <p class="text-gray-700 mb-4">Penyelewengan terhadap konstitusi semakin bertambah hebat dan
+                            muncul di tengah-tengah masyarakat bangsa Indonesia. Pancasila diperas menjadi gotong
+                            royong, terjadi pemusatan kekuatan di tangan presiden dan lain sebagainya. Semua kekuatan
+                            sosial politik bangsa Indonesia yang telah membuktikan diri loyal dan setia dalam perjuangan
+                            menegakkan negara Republik Indonesia, karena tidak menyetujui politik yang dijalankan
+                            pemerintah maka dibubarkan atau dipaksa membubarkan diri, seperti yang dialami PSI dan
+                            Masyumi.</p>
 
-                <p>Dibalik semua kejadian tersebut sesungguhnya ada permainan politik di
-                    belakang layar justru sangat
-                    menentukan. Kekuatan politik itu tidak lain adalah PKI. Maka dapat diterka ke mana arah yang akan
-                    ditempuh Soekarno, antara lain lewat tangan pemerintah PKI secara terselubung membunuh lawan-lawan
-                    tangguhnya seperti Masyumu dan PSI.</p>
+                        <p class="text-gray-700 mb-4">Dibalik semua kejadian tersebut sesungguhnya ada permainan politik
+                            di belakang layar justru sangat menentukan. Kekuatan politik itu tidak lain adalah PKI. Maka
+                            dapat diterka ke mana arah yang akan ditempuh Soekarno, antara lain lewat tangan pemerintah
+                            PKI secara terselubung membunuh lawan-lawan tangguhnya seperti Masyumu dan PSI.</p>
 
-                <p>Bahkan organisasi-organisasi yang berdekatan dengan Masyumi semacam
-                    Muhammadiyah, HMI, PII dan
-                    lainnya tidak luput dari incaran PKI untuk suatu saat tiba gilirannya digulung. Dikarenakan adanya
-                    situasi semacam itu. Muhammadiyah merasa berkepentingan untuk menjelaskan secara resmi tentang
-                    siapakah sesungguhnya Muhammadiyah. Gambaran totalitas tentang apa dan siapakah Muhammadiyah
-                    diuraikan dengan ringkas namun mencakup dalam materi "Kepribadian Muhammadiyah".</p>
+                        <p class="text-gray-700">Bahkan organisasi-organisasi yang berdekatan dengan Masyumi semacam
+                            Muhammadiyah, HMI, PII dan lainnya tidak luput dari incaran PKI untuk suatu saat tiba
+                            gilirannya digulung. Dikarenakan adanya situasi semacam itu. Muhammadiyah merasa
+                            berkepentingan untuk menjelaskan secara resmi tentang siapakah sesungguhnya Muhammadiyah.
+                            Gambaran totalitas tentang apa dan siapakah Muhammadiyah diuraikan dengan ringkas namun
+                            mencakup dalam materi "Kepribadian Muhammadiyah".</p>
+                    </div>
 
-                <strong style="margin-top: 20px;">2. Perlu pegangan yang jelas bagi pimpinan dan anggota</strong>
-                <p>Untuk melancarkan amal usahanya seperti pandangan, cita-cita serta cara yang
-                    ditempuh dalam hidup
-                    seperti tersebut di atas, maka sangat penting Muhammadiyah memiliki pegangan yang pasti untuk masa
-                    kini dan seterusnya, baik bagi anggota dan pimpinannya. Menghadapi persoalan yang cukup berat pada
-                    Muktamar ke-32 tahun 1962, maka dirumuskan "Kepribadian Muhammadiyah".</p>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">2. Perlu pegangan yang jelas bagi pimpinan dan
+                            anggota</h3>
+                        <p class="text-gray-700">Untuk melancarkan amal usahanya seperti pandangan, cita-cita serta cara
+                            yang ditempuh dalam hidup seperti tersebut di atas, maka sangat penting Muhammadiyah
+                            memiliki pegangan yang pasti untuk masa kini dan seterusnya, baik bagi anggota dan
+                            pimpinannya. Menghadapi persoalan yang cukup berat pada Muktamar ke-32 tahun 1962, maka
+                            dirumuskan "Kepribadian Muhammadiyah".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-            </section>
-
-            <section id="fungsi" class="section">
-                <h3>4. FUNGSI KEPRIBADIAN MUHAMMADIYAH</h3>
-                <p>
-                    Kepribadian Muhammadiyah berfungsi sebagai landasan, pedoman dan pegangan
-                    bagi gerak Muhammadiyah
+        <section id="fungsi" class="section-hidden bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-leaf mr-3"></i>4. FUNGSI KEPRIBADIAN MUHAMMADIYAH
+                </h2>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700">
+                    Kepribadian Muhammadiyah berfungsi sebagai landasan, pedoman dan pegangan bagi gerak Muhammadiyah
                     menuju cita-cita terwujudnya masyarakat utama, adil makmur yang diridhoi Allah SWT. Landasan berarti
                     tempat berjalan, pedoman sebagai penunjuk arah yang tepat dan pegangan dimaksudkan menjaga dari
                     tergelincir. Ketiganya itu disatupadukan dalam tubuh Muhammadiyah yang diharapkan terbentuk
-                    sifat-sifat Muhammadiyah sebagai jalinan yang kokoh tak terpisahkan. </p>
-
-            </section>
-
-            <section id="hakikat" class="section">
-                <h3>5. HAKEKAT KEPRIBADIAN MUHAMMADIYAH</h3><br>
-                <strong style="margin-top: 20px;">1. Situasi politik negara dan masyarakat di sekitar 1962</strong>
-                <p style="margin-top: 10px;">Memahami Kepribadian Muhammadiyah berarti:<br>Memahami apa sebenarnya Muhammadiyah. Karena Muhammadiyah ini sebagai
-                    organisasi, sebagai sebuah persyarikatan yang beraqidah Islam dan bersumber pada Alquran dan Sunnah,
-                    maka perlu dipahami, Islam yang bagaimanakah yang hendak ditegakkan dan dijunjung tinggi, mengingat
-                    telah banyak kekaburan-kekaburan dalam Islam di Indonesia. Dan hal ini pulalah yang hendak
-                    dipergunakan untuk mendasari atau menjiwai segala amal usaha Muhammadiyah sebagai organisasi.
-                    Kemudian dengan sifat-sifat dan cara-cara yang kita contoh dari
-
-                    bagaimana sejarah dakwah Rasulullah Saw yang mula-mula dilaksanakan. Itu pulalah yang kita jadikan
-                    sifat gerak dakwah Muhammadiyah disesuaikan dengan perkembangan kekinian.
+                    sifat-sifat Muhammadiyah sebagai jalinan yang kokoh tak terpisahkan.
                 </p>
+            </div>
+        </section>
 
-                <strong style="margin-top: 20px;">2. Kepada siapakah Kepribadian Muhammadiyah diberikan</strong><br>
-                <p>Secara khusus Kepribadian Muhammadiyah ini diperuntukkan bagi warga
-                    Muhammadiyah agar terarah dan
-                    berlandaskan pada nilai Islam yang sebenarnya dalam berjuang menegakkan ajaran Islam yang kaffah.
-                    Namun secara umum Kepribadian Muhammadiyah ini juga diterapkan oleh seluruh umat Islam agar
-                    terhindar dari praktek agama Islam yang tidak sesuai dengan ajaran islam yang murni yaitu bersumber
-                    pada Alquran dan Hadits.</p>
+        <section id="hakikat" class="section-hidden bg-white rounded-xl shadow-md overflow-hidden mb-8">
+            <div class="bg-green-600 text-white p-6">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-lightbulb mr-3"></i>5. HAKEKAT KEPRIBADIAN MUHAMMADIYAH
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">1. Situasi politik negara dan masyarakat di
+                            sekitar 1962</h3>
+                        <p class="text-gray-700">
+                            Memahami Kepribadian Muhammadiyah berarti:<br>Memahami apa sebenarnya Muhammadiyah. Karena
+                            Muhammadiyah ini sebagai organisasi, sebagai sebuah persyarikatan yang beraqidah Islam dan
+                            bersumber pada Alquran dan Sunnah, maka perlu dipahami, Islam yang bagaimanakah yang hendak
+                            ditegakkan dan dijunjung tinggi, mengingat telah banyak kekaburan-kekaburan dalam Islam di
+                            Indonesia. Dan hal ini pulalah yang hendak dipergunakan untuk mendasari atau menjiwai segala
+                            amal usaha Muhammadiyah sebagai organisasi. Kemudian dengan sifat-sifat dan cara-cara yang
+                            kita contoh dari bagaimana sejarah dakwah Rasulullah Saw yang mula-mula dilaksanakan. Itu
+                            pulalah yang kita jadikan sifat gerak dakwah Muhammadiyah disesuaikan dengan perkembangan
+                            kekinian.
+                        </p>
+                    </div>
 
-                <strong style="margin-top: 20px;">3 Bagaimana Kepribadian Muhammadiyah diajarkan?</strong>
-                <p &nbsp;&nbsp;&nbsp;&nbsp;>Tidak ada cara lain dalam memberikan atau menuntunkan Kepribadian
-                    Muhammadiyah ini, kecuali harus
-                    dengan teori dan praktek penanaman pengertian dan pelakasanaanya:
-                </p>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">2. Kepada siapakah Kepribadian Muhammadiyah
+                            diberikan</h3>
+                        <p class="text-gray-700">
+                            Secara khusus Kepribadian Muhammadiyah ini diperuntukkan bagi warga Muhammadiyah agar
+                            terarah dan berlandaskan pada nilai Islam yang sebenarnya dalam berjuang menegakkan ajaran
+                            Islam yang kaffah. Namun secara umum Kepribadian Muhammadiyah ini juga diterapkan oleh
+                            seluruh umat Islam agar terhindar dari praktek agama Islam yang tidak sesuai dengan ajaran
+                            islam yang murni yaitu bersumber pada Alquran dan Hadits.
+                        </p>
+                    </div>
 
-                <ul>
-                    <li>Penandasan atau pendalaman pengertian dakwah/bertabligh.</li>
-                    <li>Menggembirakan dan memantapkan tugas berdakwah. Tidak merasa rendah diri dalam menjalankan
-                        dakwah namun tidak memandang rendah kepada yang bertugas dalam lapangan lainnya (politik,
-                        ekonomi, seni budaya dan lain-lain).</li>
-                    <li>Kepada mereka para warga hendaklah ditugaskan dengan tugas yang tentu-tentu, bukan hanya dengan
-                        sukarela. Bila perlu dilakukan dengan suatu ikatan misalnya dengan perjanjian, dengan bai'at dan
-                        lain-lain.</li>
-                    <li>Sesuai dengan masa sekarang, perlu dilakukan musyawarah yang sifatnya mengevaluasi tugas-tugas
-                        itu.</li>
-                    <li>Sesuai dengan suasana sekarang, perlu pula dilakukan dengan formalitas yang menarik, yang tidak
-                        melanggar hukum-hukum agama dan juga dengan memberikan bantuan logistik.</li>
-                    <li>Pimpinan Cabang/Ranting bersama-sama dengan anggota-anggotanya memusyawarakan sasaran yang
-                        dituju, bahan-bahan yang perlu dibawakan dan membagi petugas-petugas sesuai dengan kemampuan dan
-                        sasarannya.</li>
-                    <li>Pada musyawarah yang melakukan evaluasi, sekaligus dapat ditambahkan bahan-bahan atau bekal yang
-                        diperlukan, yang akan dibagikan kepada warga selaku mubalig/muballighat.</li>
-                </ul>
-            </section>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">3 Bagaimana Kepribadian Muhammadiyah
+                            diajarkan?</h3>
+                        <p class="text-gray-700 mb-4">
+                            Tidak ada cara lain dalam memberikan atau menuntunkan Kepribadian Muhammadiyah ini, kecuali
+                            harus dengan teori dan praktek penanaman pengertian dan pelakasanaanya:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-700">Penandasan atau pendalaman pengertian dakwah/bertabligh.</li>
+                            <li class="text-gray-700">Menggembirakan dan memantapkan tugas berdakwah. Tidak merasa
+                                rendah diri dalam menjalankan dakwah namun tidak memandang rendah kepada yang bertugas
+                                dalam lapangan lainnya (politik, ekonomi, seni budaya dan lain-lain).</li>
+                            <li class="text-gray-700">Kepada mereka para warga hendaklah ditugaskan dengan tugas yang
+                                tentu-tentu, bukan hanya dengan sukarela. Bila perlu dilakukan dengan suatu ikatan
+                                misalnya dengan perjanjian, dengan bai'at dan lain-lain.</li>
+                            <li class="text-gray-700">Sesuai dengan masa sekarang, perlu dilakukan musyawarah yang
+                                sifatnya mengevaluasi tugas-tugas itu.</li>
+                            <li class="text-gray-700">Sesuai dengan suasana sekarang, perlu pula dilakukan dengan
+                                formalitas yang menarik, yang tidak melanggar hukum-hukum agama dan juga dengan
+                                memberikan bantuan logistik.</li>
+                            <li class="text-gray-700">Pimpinan Cabang/Ranting bersama-sama dengan anggota-anggotanya
+                                memusyawarakan sasaran yang dituju, bahan-bahan yang perlu dibawakan dan membagi
+                                petugas-petugas sesuai dengan kemampuan dan sasarannya.</li>
+                            <li class="text-gray-700">Pada musyawarah yang melakukan evaluasi, sekaligus dapat
+                                ditambahkan bahan-bahan atau bekal yang diperlukan, yang akan dibagikan kepada warga
+                                selaku mubalig/muballighat.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <footer>
-                &copy; Dibuat kelompok 3. Materi Pendidikan Kemuhammadiyahan — Disusun untuk kebutuhan belajar.
-                Disesuaikan jika mengacu
-                pada dokumen resmi Muhammadiyah.
-            </footer>
-        </main>
-    </div>
+        <footer class="bg-white rounded-xl shadow-md p-6 mt-8 text-center">
+            <p class="text-gray-700 mb-2">
+                &copy; Dibuat oleh Kelompok 3 - Anggota:
+                <span class="font-bold text-green-700">Dannys Martha Favrillia</span>,
+                <span class="font-bold text-green-700">Fairuz Ridho Maulana </span>,
+                <span class="font-bold text-green-700">Jofantion Reyes</span>,
+                <span class="font-bold text-green-700">Rehan</span>,
+                <span class="font-bold text-green-700">Rizkia Shinta Dewi</span>,
+                <span class="font-bold text-green-700">Anggi Dwi Puji Saputri</span>.
+            </p>
+            <p class="text-gray-600 text-sm">
+                Materi Pendidikan Kemuhammadiyahan — Disusun untuk kebutuhan belajar.
+                Disesuaikan jika mengacu pada dokumen resmi Muhammadiyah.
+            </p>
+        </footer>
+    </main>
 
-    <script src="js/script.js"></script>
+    <button id="scrollToTop"
+        class="fixed bottom-6 right-6 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-green-700 transition-colors duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section, #testimonial');
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+
+            // Show section function
+            function showSection(sectionId) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.add('section-hidden');
+                    section.classList.remove('active-section');
+                });
+
+                // Show selected section
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.remove('section-hidden');
+                    targetSection.classList.add('active-section');
+                }
+
+                // Update active nav
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active-nav');
+                    }
+                });
+
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+
+                // Scroll to top of section
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Nav link click event
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Scroll to top button
+            scrollToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Show/hide scroll to top button
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('hidden');
+                } else {
+                    scrollToTopBtn.classList.add('hidden');
+                }
+            });
+
+            // Initialize with first section active
+            showSection('pengertian');
+        });
+    </script>
 </body>
 
 </html>
